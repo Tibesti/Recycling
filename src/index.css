@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow:hidden;
+}
+
+code {
+  font-family: 'Lato', sans-serif;
+}
+
+div, h1, h2, h3, h4,h5, h6,p, span{
+  font-family: 'Lato', sans-serif;
+}
+
+
+/***********NAV**************/
+.nav-div{
+  height:80px;
+  position:absolute;
+  width:100%;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.nav-div ul{
+  margin-top:-50px;
+  margin-right:100px;
+}
+.nav-div li{
+  font-size:1.2em;
+  list-style: none;
+  float:right;
+  display:block;
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  color:#7fad39;
+}
+.nav-div li button{
+  background-color:#7fad39;
+  border:1px solid #7fad39;
+  padding:10px 25px;
+  border-radius: 8px;
+  font-size:0.9em;
+  color:white;
+}
+.nav-logo{
+  width:120px;
+  height:60px;
+  margin-top:10px;
+  margin-left:100px;
+
+}
