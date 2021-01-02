@@ -28,7 +28,7 @@ class About extends React.Component {
         if(!sessionStorage.saved_user_details) {
             window.location = '/admin/login';
         }  else {
-            fetch('http://localhost:3001/about', {
+            fetch('https://tibesti.smartvesty.com/about', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ class About extends React.Component {
                     })
                 })
 
-                fetch('http://localhost:3001/about-images', {
+                fetch('https://tibesti.smartvesty.com/about-images', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ class About extends React.Component {
                         })
                     })
                 
-                fetch('http://localhost:3001/whatweoffer', {
+                fetch('https://tibesti.smartvesty.com/whatweoffer', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ class About extends React.Component {
         e.preventDefault();
         document.getElementById('editWaw').innerHTML="Please Wait...";
         document.getElementById('editWaw').disabled=true;
-        fetch('http://localhost:3001/admin/about', {
+        fetch('https://tibesti.smartvesty.com/admin/about', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ class About extends React.Component {
         e.preventDefault();
         document.getElementById('editImages').innerHTML="Please Wait...";
         document.getElementById('editImages').disabled=true;
-        fetch('http://localhost:3001/admin/about-images', {
+        fetch('https://tibesti.smartvesty.com/admin/about-images', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ class About extends React.Component {
     }
 
     confirmDelete=()=>{
-        fetch('http://localhost:3001/admin/whatweoffer-delete', {
+        fetch('https://tibesti.smartvesty.com/admin/whatweoffer-delete', {
             method: 'delete',
             headers: {
                 'Content-Type': 'application/json'
@@ -177,7 +177,7 @@ class About extends React.Component {
         e.preventDefault();
         document.getElementById('editService').innerHTML="Please Wait...";
         document.getElementById('editService').disabled=true;
-        fetch('http://localhost:3001/admin/whatweoffer-insert', {
+        fetch('https://tibesti.smartvesty.com/admin/whatweoffer-insert', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,6 +1,5 @@
 import React from 'react';
 import Back from '../Component/BackToDashboard';
-import delet from '../img/delete.svg';
 
 import '../index.css';
 import './admin.css';
@@ -22,7 +21,7 @@ class Footer extends React.Component {
         if(!sessionStorage.saved_user_details) {
             window.location = '/admin/login';
         } else{
-            fetch('http://localhost:3001/footer', {
+            fetch('https://tibesti.smartvesty.com/footer', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -49,7 +48,7 @@ class Footer extends React.Component {
         e.preventDefault();
         document.getElementById('editSupport').innerHTML="Please Wait...";
         document.getElementById('editSupport').disabled=true;
-        fetch('http://localhost:3001/admin/footer', {
+        fetch('https://tibesti.smartvesty.com/admin/footer', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'

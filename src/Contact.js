@@ -25,7 +25,7 @@ class Contact extends React.Component {
         e.preventDefault();
         document.getElementById('contact').innerHTML="Please Wait...";
         document.getElementById('contact').disabled=true;
-        fetch('http://localhost:3001/contact', {
+        fetch('https://tibesti.smartvesty.com/contact', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

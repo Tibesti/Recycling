@@ -26,7 +26,7 @@ class Home extends React.Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:3001/', {
+        fetch('https://tibesti.smartvesty.com/', {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ class Home extends React.Component {
                     services_paragraph2:resp[4].paragraph2,
                 })
             })
-            fetch('http://localhost:3001/carousel', {
+            fetch('https://tibesti.smartvesty.com/carousel', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ class Home extends React.Component {
                         testimonials: resp,
                     })
                 })
-            fetch('http://localhost:3001/servicesorproducts', {
+            fetch('https://tibesti.smartvesty.com/servicesorproducts', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
