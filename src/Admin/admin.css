@@ -1,0 +1,100 @@
+.admin{
+    background: #EDFDF1;
+    width:100vw;
+    min-height: 100vh;
+}
+.admin-cancel{   
+    background:white;
+    border-radius: 7px;
+    padding:4px 10px;
+    color:#148F31;
+    border: 1px solid #148F31;
+    margin-right:10px;
+}
+.admin-delete{   
+    background: red;
+    border-radius: 7px;
+    padding:4px 10px;
+    color:white;
+    border: 1px solid red;
+}
+.admin-list{
+    display: flex;
+    margin:10px 0 0;
+}
+.admin-list img{
+    width: 30px;
+    height:30px;
+    margin-right: 10px;
+}
+.admin-logout{   
+    background: red;
+    border-radius: 7px;
+    padding:4px 10px;
+    position:fixed;
+    top:30px;
+    right:30px;
+    color:white;
+    border: 1px solid red;
+}
+.admin-text1{
+    color: #148F31;
+}
+.admin-top{
+  background: #EDFDF1;
+  padding: 100px 0 70px;
+  text-align: center;
+}
+.admin-top h3{
+  color: #183B56;
+}
+.admin-top p{
+  max-width: 500px;
+  margin: auto;
+}
+.dashboard-p{
+    padding-bottom: 30px;
+}
+.dashboard-btn{
+    margin:0px 10px 20px;
+}
+.login-form{
+    width:30%;
+    margin: auto;
+    padding:20px;
+    border-radius: 7px;
+    background: white;
+    color: #148F31;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+.login-form label{
+  font-size: 0.9em;
+}
+.login-form input{
+  width:100%;
+  padding:10px;
+  border-radius: 7px;
+  margin:10px 0 30px;
+  border:1px solid black;
+}
+.login-form input:focus{
+  outline: none;
+}
+.logo-margin{
+    padding: 80px 0 30px;
+}
+@media(min-width:200px){
+    .login-form{width:90%}
+}
+@media(min-width:560px){
+    .login-form{width:70%}
+}
+@media(min-width:768px){
+    .login-form{width:50%}
+}
+@media(min-width:992px){
+    .login-form{width:40%}
+}
+@media(min-width:1200px){
+    .login-form{width:30%}
+}
