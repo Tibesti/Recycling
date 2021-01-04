@@ -43,37 +43,41 @@ class Contact extends React.Component {
 
     sendContactMessage = (e) => {
         e.preventDefault();
-        document.getElementById('contact').innerHTML="Please Wait...";
-        document.getElementById('contact').disabled=true;
-        fetch('https://tibesti.smartvesty.com/contact', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: this.state.name,
-                email: this.state.email,
-                phone: this.state.phone,
-                company: this.state.company,
-                message: this.state.message
+        if(this.state.name.length && this.state.email.length && this.state.message.length){
+            document.getElementById('contact').innerHTML="Please Wait...";
+            document.getElementById('contact').disabled=true;
+            fetch('https://tibesti.smartvesty.com/contact', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: this.state.name,
+                    email: this.state.email,
+                    phone: this.state.phone,
+                    company: this.state.company,
+                    message: this.state.message
+                })
             })
-        })
-            .then(response => response.json())
-            .then(message => {
-                if (message === 'Success'){
-                    alert('Your form has been submitted successfully');
+                .then(response => response.json())
+                .then(message => {
+                    if (message === 'Success'){
+                        alert('Your form has been submitted successfully');
+                        document.getElementById('contact').innerHTML="Submit";
+                        document.getElementById('contact').disabled=false;
+                    } else{
+                        alert("Submission wasn't successful try again");
+                        document.getElementById('contact').innerHTML="Submit";
+                        document.getElementById('contact').disabled=false;
+                    }
+                })
+                .catch(err => {
                     document.getElementById('contact').innerHTML="Submit";
                     document.getElementById('contact').disabled=false;
-                } else{
-                    alert("Submission wasn't successful try again");
-                    document.getElementById('contact').innerHTML="Submit";
-                    document.getElementById('contact').disabled=false;
-                }
-            })
-            .catch(err => {
-                document.getElementById('contact').innerHTML="Submit";
-                document.getElementById('contact').disabled=false;
-            })    
+                })    
+        } else {
+            alert('All fields marked * are required')
+        }
     }
 
     render(){
