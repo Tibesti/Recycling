@@ -13,8 +13,28 @@ class Contact extends React.Component {
             email:'',
             phone:'',
             company:'',
-            message:''
+            message:'',
+            display_phone:'',
+            display_email:'',
+            display_address:'',
         }
+    }
+    componentDidMount(){
+        fetch('https://tibesti.smartvesty.com/footer', {
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(resp => {
+                    //console.log(resp);
+                    this.setState({
+                        display_phone: resp[0].phone,
+                        display_email: resp[0].email,
+                        display_address: resp[0].address,
+                    })
+                })
     }
 
     handleChange = (e) => {
@@ -104,15 +124,15 @@ class Contact extends React.Component {
                     <div className="row cnt-box2">
                         <div className="col-md-4 cnt-box1">
                             <h4>Email Us</h4>
-                            <p>iewfgidfishfih</p>
+                            <p>{this.state.display_email}</p>
                         </div>
                         <div className="col-md-4 cnt-box1">
                             <h4>Visit Us</h4>
-                            <p>iewfgidfishfih</p>
+                            <p>{this.state.display_address}</p>
                         </div>
                         <div className="col-md-4 cnt-box1">
                             <h4>Call Us</h4>
-                            <p>iewfgidfishfih</p>
+                            <p>0{this.state.display_phone}</p>
                         </div>
                     </div>
                 </div>

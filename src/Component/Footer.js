@@ -2,16 +2,43 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import '../index.css';
+import logo from '../img/logo-white.png';
 
 
 class Footer extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            phone:'',
+            email:'',
+            address:'',
+        }
+    }
+    componentDidMount(){
+        fetch('https://tibesti.smartvesty.com/footer', {
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(resp => {
+                    //console.log(resp);
+                    this.setState({
+                        phone: resp[0].phone,
+                        email: resp[0].email,
+                        address: resp[0].address,
+                    })
+                })
+    }
+
     render(){
         return(
             <div className="footer">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12 col-md-12 col-lg-3 footer-div">
-                            <h2>Logo</h2>
+                            <img src={logo} alt="logo" width="150px" />
                         </div>
                         <div className="col-sm-6 col-6 col-md-4 col-lg-3 footer-div">
                             <h4>Product</h4>
@@ -28,9 +55,9 @@ class Footer extends React.Component {
                         </div>
                         <div className="col-sm-12 col-md-4 col-lg-3">
                             <h4>Support</h4>
-                            <p>728536858</p>
-                            <p>support@sof</p>
-                            <p>address</p>
+                            <p>0{this.state.phone}</p>
+                            <p>{this.state.email}</p>
+                            <p>{this.state.address}</p>
                         </div>
                     </div>
                 </div>

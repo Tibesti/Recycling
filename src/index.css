@@ -44,6 +44,7 @@ p{
 }
 .nav-div{
   height:80px;
+  background-color: white;
   position:fixed;
   width:100%;
   left: 0;
@@ -77,8 +78,7 @@ p{
   color:white;
 }
 .nav-logo{
-  width:120px;
-  height:60px;
+  width:150px;
   margin-top:10px;
 }
 @media(max-width:768px){

@@ -2,13 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import '../index.css';
-import menu from '../img/menu.svg'
-import logo from '../img/logo.jpg'
+import menu from '../img/menu.svg';
+import logo from '../img/logo-green.png';
 
 
 class Nav extends React.Component {
     componentDidMount(){
-        var myNav = document.getElementById('nav');
+        /*var myNav = document.getElementById('nav');
         window.onscroll = function () { 
             "use strict";
             if (document.body.scrollTop >= 30 || document.documentElement.scrollTop >= 30 ) {
@@ -17,7 +17,7 @@ class Nav extends React.Component {
             else {
                 myNav.classList.remove("nav-div-colored");
             }
-        };
+        };*/
     }
 
     showMobileNav = () => {

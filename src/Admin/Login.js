@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './admin.css';
-import logo from '../img/logo.jpg';
+import logo from '../img/logo-green.png';
 
 export default class Login extends Component{
     constructor(){

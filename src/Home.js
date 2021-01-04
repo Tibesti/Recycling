@@ -20,8 +20,15 @@ class Home extends React.Component {
             services_header:'',
             services_paragraph1:'',
             services_paragraph2:'',
-            products:[],
             testimonials: [],
+            product1:'',
+            product1_img:'',
+            product2:'',
+            product2_img:'',
+            product3:'',
+            product3_img:'',
+            product4:'',
+            product4_img:'',
         }
     }
 
@@ -67,9 +74,16 @@ class Home extends React.Component {
             })
                 .then(response => response.json())
                 .then(resp => {
-                    console.log(resp);
+                    //console.log(resp);
                     this.setState({
-                        products: resp,
+                        product1:resp[0].product_name,
+                        product1_img:resp[0].image_url,
+                        product2:resp[1].product_name,
+                        product2_img:resp[1].image_url,
+                        product3:resp[2].product_name,
+                        product3_img:resp[2].image_url,
+                        product4:resp[3].product_name,
+                        product4_img:resp[3].image_url,
                     })
                 })
 
@@ -93,28 +107,27 @@ class Home extends React.Component {
             services_header,
             services_paragraph1,
             services_paragraph2,
-            products,
-            testimonials
+            testimonials,
+            product1,
+            product1_img,
+            product2,
+            product2_img,
+            product3,
+            product3_img,
+            product4,
+            product4_img,
         } = this.state;
 
-        const RenderProducts = _ => products.map((item, index) => (
-            <div className="admin-list" key={index}>
-                {/**list all */}
-                <div>
-                    <p><strong>Product Name: </strong> {item.product_name}</p>
-                    <p><strong>Image Url: </strong>{item.image_url}</p>
-                </div>
-            </div>
-        ));
-
         const RenderTestimonials = _ => testimonials.map((item, index) => (
-            <div className="admin-list" key={index}>
-                {/**list all */}
-                <div>
-                    <p><strong>Header: </strong> {item.header}</p>
-                    <p><strong>Name: </strong>{item.name}</p>
-                    <p><strong>Location: </strong>{item.work}</p>
-                    <p><strong>Paragraph: </strong>{item.content}</p>
+            <div className="testimonial-box" key={index}>
+                <h4>{item.header}</h4>
+                <p>{item.content}</p>
+                <div style={{display:'flex'}}>
+                    <div className="circle1"></div>
+                    <div>
+                        <h5>{item.name}</h5>
+                        <p>{item.work}</p>
+                    </div>
                 </div>
             </div>
         ));
@@ -127,7 +140,7 @@ class Home extends React.Component {
                     <div className="row">
                         <div className="col-md-6">
                             <h1 className="hero-txt">{hero_header}</h1>
-                            <button className="main-btn">Get Started</button>
+                            <button className="main-btn" >Get Started</button>
                         </div>
                         <div className="col-md-6 d-none d-md-block" style={{marginBottom:'80px'}}>
                             <img width="100%" src={hero_url} alt="hero-view" />
@@ -151,55 +164,54 @@ class Home extends React.Component {
                             <div className="col-md-8 col-lg-6 d-block d-md-none">{/**This block shows only on mobile */}
                                 <div style={{width:'50%', float:'left'}}>
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product1_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product1}</p>
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product2_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product2}</p>
                                 </div>
                                 <div style={{width:'50%', float:'right'}}>
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product3_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product3}</p>
                                 
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product4_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product4}</p>
                                 </div>
                             </div>
                             <div className="col-md-4 col-lg-6 who-are-we">
                                 <h5>SERVICES</h5>
-                                <h3>A different kind of chemical company</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id bibendum velit malesuada blandit viverra at consequat ut. At eget pharetra, facilisis in. Varius ornare tortor proin tortor orci, et duis. Senectus nisi erat elementum quis praesent eget.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id bibendum velit malesuada blandit viverra at consequat ut. At eget pharetra, facilisis in. Varius ornare tortor proin tortor orci, et duis. Senectus nisi erat elementum quis praesent eget.</p>
+                                <h3>{services_header}</h3>
+                                <p>{services_paragraph1}</p>
+                                <p>{services_paragraph2}</p>
                                 <button className="main-btn">SCHEDULE A MEETING</button>
                             </div>
                             <div className="col-md-8 col-lg-6 d-none d-md-block">
-                                <div style={{width:'50%', float:'left'}}>
+                            <div style={{width:'50%', float:'left'}}>
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product1_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
-                                
+                                    <p className="h-box2-p">{product1}</p>
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product2_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product2}</p>
                                 </div>
                                 <div style={{width:'50%', float:'right'}}>
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product3_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product3}</p>
                                 
                                     <div  className="h-box2">
-                                        <img width="100%" src={hero_url} alt="hero-view" />
+                                        <img width="100%" src={product4_img} alt="services" />
                                     </div>
-                                    <p className="h-box2-p">HDPE -High density polyethylene</p>
+                                    <p className="h-box2-p">{product4}</p>
                                 </div>
                             </div>
                         </div>
@@ -223,39 +235,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className="testimonial container" id="testimonial">
-                    <div className="testimonial-box">
-                        <h4>1Great Services With Good Quality Prroduct</h4>
-                        <p>I truly have nothing but the highest praise and apperciation for all that you did  for us . saving us on buying quality product at a reduced price</p>
-                        <div style={{display:'flex'}}>
-                            <div className="circle1"></div>
-                            <div>
-                                <h5>Shongai</h5>
-                                <p>Ogun State Client</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="testimonial-box">
-                        <h4>2 Services With Good Quality Prroduct</h4>
-                        <p>I truly have nothing but the highest praise and apperciation for all that you did  for us . saving us on buying quality product at a reduced price</p>
-                        <div style={{display:'flex'}}>
-                            <div className="circle1"></div>
-                            <div>
-                                <h5>Shongai</h5>
-                                <p>Ogun State Client</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="testimonial-box">
-                        <h4>3Great Services With Good Quality Prroduct</h4>
-                        <p>I truly have nothing but the highest praise and apperciation for all that you did  for us . saving us on buying quality product at a reduced price</p>
-                        <div style={{display:'flex'}}>
-                            <div className="circle1"></div>
-                            <div>
-                                <h5>Shongai</h5>
-                                <p>Ogun State Client</p>
-                            </div>
-                        </div>
-                    </div>
+                    <RenderTestimonials />
                 </div>
                 <Footer/>
             </div>
