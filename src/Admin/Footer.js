@@ -21,7 +21,7 @@ class Footer extends React.Component {
         if(!sessionStorage.saved_user_details) {
             window.location = '/admin/login';
         } else{
-            fetch('https://tibesti.smartvesty.com/footer', {
+            fetch('http://api.aandtrecycling.com/footer', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ class Footer extends React.Component {
         e.preventDefault();
         document.getElementById('editSupport').innerHTML="Please Wait...";
         document.getElementById('editSupport').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/footer', {
+        fetch('http://api.aandtrecycling.com/admin/footer', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'

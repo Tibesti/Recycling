@@ -15,7 +15,7 @@ class Footer extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('https://tibesti.smartvesty.com/footer', {
+        fetch('http://api.aandtrecycling.com/footer', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'

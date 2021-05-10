@@ -28,7 +28,7 @@ class About extends React.Component {
         if(!sessionStorage.saved_user_details) {
             window.location = '/admin/login';
         }  else {
-            fetch('https://tibesti.smartvesty.com/about', {
+            fetch('http://api.aandtrecycling.com/about', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ class About extends React.Component {
                     })
                 })
 
-                fetch('https://tibesti.smartvesty.com/about-images', {
+                fetch('http://api.aandtrecycling.com/about-images', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ class About extends React.Component {
                         })
                     })
                 
-                fetch('https://tibesti.smartvesty.com/whatweoffer', {
+                fetch('http://api.aandtrecycling.com/whatweoffer', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ class About extends React.Component {
         e.preventDefault();
         document.getElementById('editWaw').innerHTML="Please Wait...";
         document.getElementById('editWaw').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/about', {
+        fetch('http://api.aandtrecycling.com/admin/about', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ class About extends React.Component {
         e.preventDefault();
         document.getElementById('editImages').innerHTML="Please Wait...";
         document.getElementById('editImages').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/about-images', {
+        fetch('http://api.aandtrecycling.com/admin/about-images', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ class About extends React.Component {
     }
 
     confirmDelete=()=>{
-        fetch('https://tibesti.smartvesty.com/admin/whatweoffer-delete', {
+        fetch('http://api.aandtrecycling.com/admin/whatweoffer-delete', {
             method: 'delete',
             headers: {
                 'Content-Type': 'application/json'
@@ -177,7 +177,7 @@ class About extends React.Component {
         e.preventDefault();
         document.getElementById('editService').innerHTML="Please Wait...";
         document.getElementById('editService').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/whatweoffer-insert', {
+        fetch('http://api.aandtrecycling.com/admin/whatweoffer-insert', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

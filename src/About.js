@@ -20,7 +20,8 @@ class About extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('https://tibesti.smartvesty.com/about', {
+        window.scrollTo(0, 0);
+        fetch('http://api.aandtrecycling.com/about', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,7 +38,7 @@ class About extends React.Component {
                         paragraph3: resp[1].paragraph3,
                     })
                 })
-            fetch('https://tibesti.smartvesty.com/whatweoffer', {
+            fetch('http://api.aandtrecycling.com/whatweoffer', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -50,7 +51,7 @@ class About extends React.Component {
                         services: resp,
                     })
                 })
-            fetch('https://tibesti.smartvesty.com/about-images', {
+            fetch('http://api.aandtrecycling.com/about-images', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'

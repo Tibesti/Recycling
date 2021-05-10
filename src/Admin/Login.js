@@ -21,7 +21,7 @@ export default class Login extends Component{
         document.getElementById('loginButton').innerHTML="Please Wait...";
         document.getElementById('loginButton').disabled=true;
         
-        fetch('https://tibesti.smartvesty.com/admin/login', {
+        fetch('http://api.aandtrecycling.com/admin/login', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

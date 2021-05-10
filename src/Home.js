@@ -33,7 +33,8 @@ class Home extends React.Component {
     }
 
     componentDidMount(){
-        fetch('https://tibesti.smartvesty.com/', {
+        window.scrollTo(0, 0);
+        fetch('http://api.aandtrecycling.com/', {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,7 +54,7 @@ class Home extends React.Component {
                     services_paragraph2:resp[4].paragraph2,
                 })
             })
-            fetch('https://tibesti.smartvesty.com/carousel', {
+            fetch('http://api.aandtrecycling.com/carousel', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -66,7 +67,7 @@ class Home extends React.Component {
                         testimonials: resp,
                     })
                 })
-            fetch('https://tibesti.smartvesty.com/servicesorproducts', {
+            fetch('http://api.aandtrecycling.com/servicesorproducts', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -143,13 +144,21 @@ class Home extends React.Component {
                             <button className="main-btn" >Get Started</button>
                         </div>
                         <div className="col-md-6 d-none d-md-block" style={{marginBottom:'80px'}}>
-                            <img width="100%" src={hero_url} alt="hero-view" />
+                            {hero_url ? 
+                                <img width="100%" src={hero_url} alt="hero-view" />
+                                // : <img src={loader} alt="loading" />
+                                :<p>Loading image ...</p>
+                            }
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6">
                             <div className="h-box1">
-                                <img width="100%" src={waw_url} alt="hero-view" />
+                                {waw_url ? 
+                                    <img width="100%" src={waw_url} alt="hero-view" />
+                                    // : <img src={loader} alt="loading" />
+                                    :<p>Loading image ...</p>
+                                }
                             </div>
                         </div>
                         <div className="col-md-6 who-are-we">
@@ -162,24 +171,40 @@ class Home extends React.Component {
                     <div style={{marginTop:'70px'}}>
                         <div className="row">
                             <div className="col-md-8 col-lg-6 d-block d-md-none">{/**This block shows only on mobile */}
-                                <div style={{width:'50%', float:'left'}}>
+                                <div>
                                     <div  className="h-box2">
-                                        <img width="100%" src={product1_img} alt="services" />
+                                        {product1_img ? 
+                                            <img width="100%" src={product1_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product1}</p>
                                     <div  className="h-box2">
-                                        <img width="100%" src={product2_img} alt="services" />
+                                        {product2_img ? 
+                                            <img width="100%" src={product2_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product2}</p>
                                 </div>
-                                <div style={{width:'50%', float:'right'}}>
+                                <div>
                                     <div  className="h-box2">
-                                        <img width="100%" src={product3_img} alt="services" />
+                                        {product3_img ? 
+                                            <img width="100%" src={product3_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product3}</p>
                                 
                                     <div  className="h-box2">
-                                        <img width="100%" src={product4_img} alt="services" />
+                                        {product4_img ? 
+                                            <img width="100%" src={product4_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product4}</p>
                                 </div>
@@ -194,22 +219,38 @@ class Home extends React.Component {
                             <div className="col-md-8 col-lg-6 d-none d-md-block">
                             <div style={{width:'50%', float:'left'}}>
                                     <div  className="h-box2">
-                                        <img width="100%" src={product1_img} alt="services" />
+                                        {product1_img ? 
+                                            <img width="100%" src={product1_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product1}</p>
                                     <div  className="h-box2">
-                                        <img width="100%" src={product2_img} alt="services" />
+                                        {product2_img ? 
+                                            <img width="100%" src={product2_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product2}</p>
                                 </div>
                                 <div style={{width:'50%', float:'right'}}>
                                     <div  className="h-box2">
-                                        <img width="100%" src={product3_img} alt="services" />
+                                        {product3_img ? 
+                                            <img width="100%" src={product3_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product3}</p>
                                 
                                     <div  className="h-box2">
-                                        <img width="100%" src={product4_img} alt="services" />
+                                        {product4_img ? 
+                                            <img width="100%" src={product4_img} alt="services" />
+                                            // : <img src={loader} alt="loading" />
+                                            :<p>Loading image ...</p>
+                                        }
                                     </div>
                                     <p className="h-box2-p">{product4}</p>
                                 </div>

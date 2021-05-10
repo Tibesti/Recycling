@@ -2,6 +2,7 @@
   "name": "fresh-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://aandtrecycling.com/",
   "engines": {
     "npm": "6.14.5",
     "node": "14.5.0" 

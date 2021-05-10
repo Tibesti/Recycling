@@ -20,7 +20,8 @@ class Contact extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('https://tibesti.smartvesty.com/footer', {
+        window.scrollTo(0, 0);
+        fetch('http://api.aandtrecycling.com/footer', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,7 +47,7 @@ class Contact extends React.Component {
         if(this.state.name.length && this.state.email.length && this.state.message.length){
             document.getElementById('contact').innerHTML="Please Wait...";
             document.getElementById('contact').disabled=true;
-            fetch('https://tibesti.smartvesty.com/contact', {
+            fetch('http://api.aandtrecycling.com/contact', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'

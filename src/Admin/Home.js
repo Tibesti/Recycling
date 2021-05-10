@@ -40,7 +40,7 @@ class Home extends React.Component {
         if(!sessionStorage.saved_user_details) {
             window.location = '/admin/login';
         } else {
-            fetch('https://tibesti.smartvesty.com/', {
+            fetch('http://api.aandtrecycling.com/', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ class Home extends React.Component {
                         services_paragraph2:resp[4].paragraph2,
                     })
                 })
-                fetch('https://tibesti.smartvesty.com/carousel', {
+                fetch('http://api.aandtrecycling.com/carousel', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ class Home extends React.Component {
                             testimonials: resp,
                         })
                     })
-                fetch('https://tibesti.smartvesty.com/servicesorproducts', {
+                fetch('http://api.aandtrecycling.com/servicesorproducts', {
                     method: 'get',
                     headers: {
                         'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ class Home extends React.Component {
         e.preventDefault();
         document.getElementById('editHero').innerHTML="Please Wait...";
         document.getElementById('editHero').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/home', {
+        fetch('http://api.aandtrecycling.com/admin/home', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ class Home extends React.Component {
         e.preventDefault();
         document.getElementById('editWaw').innerHTML="Please Wait...";
         document.getElementById('editWaw').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/home', {
+        fetch('http://api.aandtrecycling.com/admin/home', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -170,7 +170,7 @@ class Home extends React.Component {
         e.preventDefault();
         document.getElementById('editServices').innerHTML="Please Wait...";
         document.getElementById('editServices').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/home', {
+        fetch('http://api.aandtrecycling.com/admin/home', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -223,7 +223,7 @@ class Home extends React.Component {
     }
 
     confirmDeleteProduct=()=>{
-        fetch('https://tibesti.smartvesty.com/admin/home-product-delete', {
+        fetch('http://api.aandtrecycling.com/admin/home-product-delete', {
             method: 'delete',
             headers: {
                 'Content-Type': 'application/json'
@@ -240,7 +240,7 @@ class Home extends React.Component {
         e.preventDefault();
         document.getElementById('editProducts').innerHTML="Please Wait...";
         document.getElementById('editProducts').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/home-product-insert', {
+        fetch('http://api.aandtrecycling.com/admin/home-product-insert', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -270,7 +270,7 @@ class Home extends React.Component {
     }
 
     confirmDeleteTestimonial=()=>{
-        fetch('https://tibesti.smartvesty.com/admin/carousel-delete', {
+        fetch('http://api.aandtrecycling.com/admin/carousel-delete', {
             method: 'delete',
             headers: {
                 'Content-Type': 'application/json'
@@ -287,7 +287,7 @@ class Home extends React.Component {
         e.preventDefault();
         document.getElementById('editTestimonials').innerHTML="Please Wait...";
         document.getElementById('editTestimonials').disabled=true;
-        fetch('https://tibesti.smartvesty.com/admin/carousel-insert', {
+        fetch('http://api.aandtrecycling.com/admin/carousel-insert', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
